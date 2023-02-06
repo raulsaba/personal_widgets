@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'app/home_page.dart';
@@ -12,12 +13,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Raul Sabadin - Custom Widgets',
+      scrollBehavior: ScrollConfiguration.of(context)
+          .copyWith(scrollbars: false, dragDevices: {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      }),
       theme: ThemeData(
-        primarySwatch: Colors.amber,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
+        primarySwatch: Colors.purple,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.purple,
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'My Custom Widgets'),
     );
   }
 }

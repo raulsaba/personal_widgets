@@ -33,7 +33,6 @@ class _TabbedCardState extends State<TabbedCard> {
   final ScrollController _tabsScrollController = ScrollController();
 
   Radius _getTopLeftBorder() {
-    // print(_tabsScrollController.offset);
     return radius;
   }
 
@@ -89,11 +88,26 @@ class _TabbedCardState extends State<TabbedCard> {
                             topRight: radius,
                           ),
                         ),
-                        child: Center(
-                          child: Text(
-                            tab.label,
-                          ),
-                        ),
+                        child: Builder(builder: (context) {
+                          if (tab.icon != null) {
+                            return Row(
+                              children: [
+                                tab.icon!,
+                                const SizedBox(width: 5),
+                                Text(
+                                  tab.label,
+                                  style: tab.options?.labelStyle,
+                                )
+                              ],
+                            );
+                          }
+                          return Center(
+                            child: Text(
+                              tab.label,
+                              style: tab.options?.labelStyle,
+                            ),
+                          );
+                        }),
                       ),
                     ),
                   );

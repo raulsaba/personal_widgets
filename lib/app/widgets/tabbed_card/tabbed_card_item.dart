@@ -16,6 +16,10 @@ class TabbedCardItem {
 
 class TabbedCardItensOptions {
   final Color? tabColor;
+  final TextStyle? labelStyle;
 
-  TabbedCardItensOptions({this.tabColor});
+  TabbedCardItensOptions({
+    this.tabColor,
+    this.labelStyle,
+  });
 }

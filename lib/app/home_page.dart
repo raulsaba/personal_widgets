@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:personal_widgets/app/widgets/tabbed_card/tabbed_card.dart';
-import 'package:personal_widgets/app/widgets/tabbed_card/tabbed_card_item.dart';
+
+import 'widgets/tabbed_card/tabbed_card.dart';
+import 'widgets/tabbed_card/tabbed_card_item.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -23,24 +24,44 @@ class _MyHomePageState extends State<MyHomePage> {
         child: TabbedCard(
           tabs: [
             TabbedCardItem(
-              label: "label",
-              child: Placeholder(
+              label: "First Tab",
+              child: const Placeholder(
                 color: Colors.blue,
               ),
             ),
             TabbedCardItem(
-              label: 'label 2',
-              child: Placeholder(
+              label: 'Second Tab',
+              child: const Placeholder(
                 color: Colors.red,
               ),
             ),
             TabbedCardItem(
-              label: "label 3",
+              label: "With a background color",
               options: TabbedCardItensOptions(
                 tabColor: Colors.amber,
               ),
-              child: Placeholder(),
-            )
+              child: const Placeholder(),
+            ),
+            TabbedCardItem(
+              label: 'With an icon',
+              icon: const Icon(Icons.dashboard),
+              child: const Placeholder(
+                color: Colors.red,
+              ),
+            ),
+            TabbedCardItem(
+              label: 'With an icon and custom LabelStyle',
+              icon: const Icon(
+                Icons.dashboard,
+                color: Colors.white,
+              ),
+              options: TabbedCardItensOptions(
+                  tabColor: Colors.black,
+                  labelStyle: const TextStyle(color: Colors.white)),
+              child: const Placeholder(
+                color: Colors.purple,
+              ),
+            ),
           ],
         ),
       ),
