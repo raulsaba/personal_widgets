@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/tabbed_card/tabbed_card.dart';
-import 'widgets/tabbed_card/tabbed_card_item.dart';
+import 'package:tabbed_card/tabbed_card.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
